@@ -646,158 +646,47 @@ def ecg_hr(df, window, slide):
 """
 Audio data
 """
-def mean_audio(df, window_size, slide):
-    window_size = window_size * 1000
-    slide = slide * 1000
 
-    #print(df.head(2))
+def aggregate_audio(df, window_size, slide):
+    window_size *= 1000
+    slide *= 1000
 
-    cols = [col + '_' + stat for col in df.columns[:-1] for stat in ['mean']]
-    cols.insert(0, 'Timestamp')
-    mean_out = pd.DataFrame(columns=cols)
+    stats = {
+        'mean': lambda x: x.mean(),
+        'min':  lambda x: x.min(),
+        'max':  lambda x: x.max(),
+        'std':  lambda x: x.std(),
+    }
+
+    # Initialize result dictionary with empty DataFrames for each statistic
+    result = {stat: pd.DataFrame(columns=['Timestamp'] + [f"{col}_{stat}" for col in df.columns[:-1]]) for stat in stats}
 
     window_start = df['Timestamp'].min()
 
     while True:
         window_end = window_start + window_size
-        window_df = df.loc[(df['Timestamp'] >= window_start) & (df['Timestamp'] < window_end)]
+        window_df = df[(df['Timestamp'] >= window_start) & (df['Timestamp'] < window_end)]
 
-        row = []
-        for column in window_df.columns[:-1]:  
-            mean_value = window_df[column].mean()
-            row.extend([mean_value])
-
-        row.insert(0, window_start)
-        mean_out.loc[len(mean_out)] = row
+        for stat, func in stats.items():
+            row = [window_start]
+            row += [func(window_df[col]) for col in df.columns[:-1]]
+            result[stat].loc[len(result[stat])] = row
 
         window_start += slide
         if (window_start + window_size) > df['Timestamp'].max():
             break
 
     # Normalization
-    mean_out_time = mean_out['Timestamp']
+    scaled_results = {}
+    for stat, df_stat in result.items():
+        ts = df_stat['Timestamp']
+        scaler = StandardScaler()
+        scaled = pd.DataFrame(scaler.fit_transform(df_stat), columns=df_stat.columns)
+        scaled['Timestamp'] = ts  # timestamp 복원
+        scaled.reset_index(drop=True, inplace=True)
+        scaled_results[stat] = scaled
 
-
-    scaler = StandardScaler()
-    scaled_mean_out = pd.DataFrame(scaler.fit_transform(mean_out), columns=mean_out.columns)
-    scaled_mean_out['Timestamp'] = mean_out_time
-    
-    scaled_mean_out.reset_index(drop=True, inplace=True)
-
-    #print(scaled_mean_out.head(2))
-
-    return scaled_mean_out
-
-def min_audio(df, window_size, slide):
-    window_size = window_size * 1000
-    slide = slide * 1000
-
-    cols = [col + '_' + stat for col in df.columns[:-1] for stat in ['min']]
-    cols.insert(0, 'Timestamp')
-    min_out = pd.DataFrame(columns=cols)
-
-    window_start = df['Timestamp'].min()
-
-    while True:
-        window_end = window_start + window_size
-        window_df = df.loc[(df['Timestamp'] >= window_start) & (df['Timestamp'] < window_end)]
-
-        row = []
-        for column in window_df.columns[:-1]:  # 마지막 'Timestamp' 컬럼을 제외합니다.
-            min_value = window_df[column].min()
-            row.extend([min_value])
-
-        row.insert(0, window_start)
-        min_out.loc[len(min_out)] = row
-
-        window_start += slide
-        if (window_start + window_size) > df['Timestamp'].max():
-            break
-
-    # Normalization
-    min_out_time = min_out['Timestamp']
-
-    scaler = StandardScaler()
-    scaled_min_out = pd.DataFrame(scaler.fit_transform(min_out), columns=min_out.columns)
-    scaled_min_out['Timestamp'] = min_out_time
-    
-    scaled_min_out.reset_index(drop=True, inplace=True)
-
-    return scaled_min_out
-
-def max_audio(df, window_size, slide):
-    window_size = window_size * 1000
-    slide = slide * 1000
-
-    cols = [col + '_' + stat for col in df.columns[:-1] for stat in ['max']]
-    cols.insert(0, 'Timestamp')
-    max_out = pd.DataFrame(columns=cols)
-
-    window_start = df['Timestamp'].min()
-
-    while True:
-        window_end = window_start + window_size
-        window_df = df.loc[(df['Timestamp'] >= window_start) & (df['Timestamp'] < window_end)]
-
-        row = []
-        for column in window_df.columns[:-1]:  # 마지막 'time' 컬럼을 제외합니다.
-            max_value = window_df[column].max()
-            row.extend([max_value])
-
-        row.insert(0, window_start)
-        max_out.loc[len(max_out)] = row
-
-        window_start += slide
-        if (window_start + window_size) > df['Timestamp'].max():
-            break
-
-    max_out.reset_index(drop=True, inplace=True)
-
-    # Normalization
-    max_out_time = max_out['Timestamp']
-
-    scaler = StandardScaler()
-    scaled_max_out = pd.DataFrame(scaler.fit_transform(max_out), columns=max_out.columns)
-    scaled_max_out['Timestamp'] = max_out_time
-    
-    scaled_max_out.reset_index(drop=True, inplace=True)
-
-    return scaled_max_out
-
-def std_audio(df, window_size, slide):
-    window_size = window_size * 1000
-    slide = slide * 1000
-    cols = [col + '_' + stat for col in df.columns[:-1] for stat in ['std']]
-    cols.insert(0, 'Timestamp')
-    std_out = pd.DataFrame(columns=cols)
-    window_start = df['Timestamp'].min()
-
-    while True:
-        window_end = window_start + window_size
-        window_df = df.loc[(df['Timestamp'] >= window_start) & (df['Timestamp'] < window_end)]
-
-        row = []
-        for column in window_df.columns[:-1]:  # 마지막 'time' 컬럼을 제외합니다.
-            std_value = window_df[column].std()
-            row.extend([std_value])
-
-        row.insert(0, window_start)
-        std_out.loc[len(std_out)] = row
-
-        window_start += slide
-        if (window_start + window_size) > df['Timestamp'].max():
-            break
-
-    # Normalization
-    std_out_time = std_out['Timestamp']
-    scaler = StandardScaler()
-    scaled_std_out = pd.DataFrame(scaler.fit_transform(std_out), columns=std_out.columns)
-    scaled_std_out['Timestamp'] = std_out_time
-    
-    scaled_std_out.reset_index(drop=True, inplace=True)
-
-    return scaled_std_out
-
+    return scaled_results['mean'], scaled_results['min'], scaled_results['max'], scaled_results['std']
 
 
 """
