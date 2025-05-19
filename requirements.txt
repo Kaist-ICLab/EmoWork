@@ -107,6 +107,7 @@ stack-data==0.6.2
 statsmodels==0.13.5
 tenacity==8.2.0
 threadpoolctl==3.1.0
+thundersvm==0.3.12
 toml==0.10.2
 tornado==6.3.3
 tqdm==4.64.1
