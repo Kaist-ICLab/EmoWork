@@ -84,6 +84,7 @@ Summarizes the dataset structure and provides a high-level overview of data sour
 
 Additional visualizations generated from this notebook are available in the [`figures/sensor_data/`](figures/sensor_data) directory.
 
+<br>
 
 ### `Label_Analysis.ipynb`
 Analyzes the distribution of self-reported labels (e.g., perceived arousal, stress, suppression, valence), investigates missing values, and explores correlations and group differences (e.g., by gender or role).
@@ -96,6 +97,8 @@ Analyzes the distribution of self-reported labels (e.g., perceived arousal, stre
 
 Additional visualizations generated from this notebook are available in the [`figures/label_analysis/`](figures/label_analysis) directory.
 
+<br>
+
 ### `ML_analysis.ipynb`
 This notebook builds machine learning models to predict perceived emotional states 
 (`arousal`, `stress`, `suppression`, `valence`) using five classifiers: 
@@ -103,7 +106,7 @@ Decision Tree, Random Forest, SVM, XGBoost, and kNN.
 Model performance is evaluated with standard metrics including Accuracy, F1 score, Precision, Recall, and ROC-AUC.
 
 <p align="center">
-  <img src="figures/model_results/auc_random_forest_by_pnum.png" width="800"/>
+  <img src="figures/model_results/auc_random_forest_by_pnum.png" width="600"/>
   <br>
   <i>Participant-wise AUC scores for session classification using a Random Forest model</i>
 </p>
@@ -111,6 +114,7 @@ Model performance is evaluated with standard metrics including Accuracy, F1 scor
 Additional visualizations generated from this notebook are available in the [`figures/model_results/`](figures/model_results) directory.
 
 <br>
+
 ## 🤝 Contributing
 
 We welcome contributions to improve the code and documentation. Please feel free to submit issues and pull requests.
