@@ -15,6 +15,7 @@
 > **"EmoWorker: A Multimodal Dataset for Assessing Emotion, Stress, and Emotional Workload in Interpersonal Work Scenario"** (*under review*)
 
 The dataset itself is available at [Zenodo - EmoWorker](https://zenodo.org/uploads/15181220).
+<br>
 
 ## 📁 Repository Structure
 
@@ -64,6 +65,8 @@ pip install -r requirements.txt
 - `Label_Analysis.ipynb`
 - `ML_analysis.ipynb`
 
+<br>
+
 ## 📝 Notebook Overview
 
 ### `Dataset_Records.ipynb`
@@ -107,6 +110,7 @@ Model performance is evaluated with standard metrics including Accuracy, F1 scor
 
 Additional visualizations generated from this notebook are available in the [`figures/model_results/`](figures/model_results) directory.
 
+<br>
 ## 🤝 Contributing
 
 We welcome contributions to improve the code and documentation. Please feel free to submit issues and pull requests.
