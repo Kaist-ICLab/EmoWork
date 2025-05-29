@@ -61,11 +61,9 @@ git clone https://github.com/Kaist-ICLab/EmoWorker.git
 pip install -r requirements.txt
 ```
 3. Run the notebooks in **`TECHNICAL_VALIDATION`** folder:
-- `Dataset_Records.ipynb`
-- `Label_Analysis.ipynb`
-- `ML_analysis.ipynb`
-
-<br>
+- [`Dataset_Records.ipynb`](TECHNICAL_VALIDATION/Dataset_Records.ipynb)
+- [`Label_Analysis.ipynb`](TECHNICAL_VALIDATION/Label_Analysis.ipynb)
+- [`ML_analysis.ipynb`](TECHNICAL_VALIDATION/ML_analysis.ipynb)
 
 ## 📝 Notebook Overview
 
@@ -84,8 +82,6 @@ This notebook summarizes the dataset structure and provides a high-level overvie
 
 Additional visualizations generated from this notebook are available in the [`figures/sensor_data/`](figures/sensor_data) directory.
 
-<br>
-
 ### `Label_Analysis.ipynb`
 This notebook analyzes the distribution of self-reported labels (e.g., perceived arousal, stress, suppression, valence), investigates missing values, and explores correlations and group differences (e.g., by gender or role).
 
@@ -96,8 +92,6 @@ This notebook analyzes the distribution of self-reported labels (e.g., perceived
 </p>
 
 Additional visualizations generated from this notebook are available in the [`figures/label_analysis/`](figures/label_analysis) directory.
-
-<br>
 
 ### `ML_analysis.ipynb`
 This notebook builds machine learning models to predict perceived emotional states 
@@ -113,8 +107,6 @@ Model performance is evaluated with standard metrics including **Accuracy**, **F
 </p>
 
 Additional visualizations generated from this notebook are available in the [`figures/model_results/`](figures/model_results) directory.
-
-<br>
 
 ## 🤝 Contributing
 
