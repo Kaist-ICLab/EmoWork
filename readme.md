@@ -1,12 +1,12 @@
+<p align="center">
+  <img src="figures/emoworker_logo.png" width="400"/>
+</p>
 
-<br>
-<div align="center">
-    <img src="figures/emoworker_logo.png", width="400"/>
-    <br>
-    <br> A Multimodal Dataset for Assessing **Emotion**, **Stress**, and **Emotional Workload** in Interpersonal Work Scenario 
-</div>
+<p align="center">
+  <b>A Multimodal Dataset for Assessing <i>Emotion</i>, <i>Stress</i>, and <i>Emotional Workload</i> in Interpersonal Work Scenario</b>
+</p>
 
-# EmoWorker: Technical Validation Code
+# 💻 EmoWorker: Technical Validation Code
 📌 This repository contains supplementary code and technical validation materials for the manuscript
 > **"EmoWorker: A Multimodal Dataset for Assessing Emotion, Stress, and Emotional Workload in Interpersonal Work Scenario"** (*under review*)
 
@@ -65,9 +65,7 @@ pip install -r requirements.txt
 ### `Dataset_Records.ipynb`
 Summarizes the dataset structure and provides a high-level overview of data sources and preprocessing steps. This notebook includes:
 - Data collection protocol details
-- Signal preprocessing steps
 - Data quality checks
-- Feature extraction methods
 - Missing data analysis
 - Data synchronization procedures
 
@@ -78,40 +76,27 @@ Additional visualizations generated from this notebook are available in the [`fi
 
 
 ### `Label_Analysis.ipynb`
-Analyzes the distribution of self-reported labels (e.g., perceived arousal, stress, suppression, valence), investigates missing values, and explores correlations and group differences (e.g., by gender or role). Key analyses include:
-- Label distribution visualization
-- Missing data patterns
-- Correlation analysis between different measures
-- Statistical tests for group differences
-- Temporal analysis of emotional responses
+Analyzes the distribution of self-reported labels (e.g., perceived arousal, stress, suppression, valence), investigates missing values, and explores correlations and group differences (e.g., by gender or role).
 
-<img src="figures/label_analysis/arousal_valence_distribution.png" width="600"/>
-<p align="center"><i>Distribution of perceived arousal and valence across all participants</i></p>
+<p align="center">
+  <img src="figures/label_analysis/arousal_valence_distribution.png" width="800"/>
+  <br>
+  <i>Distribution of perceived arousal and valence across all participants</i>
+</p>
 
 Additional visualizations generated from this notebook are available in the [`figures/label_analysis/`](figures/label_analysis) directory.
 
 ### `ML_analysis.ipynb`
-Builds machine learning models to predict each of the following target variables:  
-- `perceived_arousal`  
-- `perceived_stress`  
-- `perceived_suppression`  
-- `perceived_valence`  
+This notebook builds machine learning models to predict perceived emotional states 
+(`arousal`, `stress`, `suppression`, `valence`) using five classifiers: 
+Decision Tree, Random Forest, SVM, XGBoost, and kNN.  
+Model performance is evaluated with standard metrics including Accuracy, F1 score, Precision, Recall, and ROC-AUC.
 
-The following models are implemented and evaluated:
-- Decision Tree  
-- Random Forest  
-- Support Vector Machine (SVM)  
-- XGBoost  
-- k-Nearest Neighbors (kNN)  
-
-Each model's performance is assessed using:
-- Accuracy
-- F1 score
-- Precision and Recall
-- ROC-AUC (where applicable)
-
-<img src="figures/model_results/auc_random_forest_by_pnum.png" width="600"/>
-<p align="center"><i>Participant-wise AUC scores for session classification using a Random Forest model</i></p>
+<p align="center">
+  <img src="figures/model_results/auc_random_forest_by_pnum.png" width="800"/>
+  <br>
+  <i>Participant-wise AUC scores for session classification using a Random Forest model</i>
+</p>
 
 Additional visualizations generated from this notebook are available in the [`figures/model_results/`](figures/model_results) directory.
 
