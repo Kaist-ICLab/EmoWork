@@ -1,9 +1,13 @@
+<br>
+
 <p align="center">
   <img src="figures/emoworker_logo.png" width="400"/>
 </p>
 
+<br>
+
 <p align="center">
-  <b>A Multimodal Dataset for Assessing <i>Emotion</i>, <i>Stress</i>, and <i>Emotional Workload</i> in Interpersonal Work Scenario</b>
+  <b>A Multimodal Dataset for Assessing <i>Emotion</i>, <i>Stress</i>, <br>and <i>Emotional Workload</i> in Interpersonal Work Scenario</b>
 </p>
 
 # 💻 EmoWorker: Technical Validation Code
@@ -69,8 +73,11 @@ Summarizes the dataset structure and provides a high-level overview of data sour
 - Missing data analysis
 - Data synchronization procedures
 
-<img src="figures/sensor_data/p01_polar_hr.png" width="600"/>
-<p align="center"><i>Example of heart rate signal collected from Polar H10</i></p>
+<p align="center">
+  <img src="figures/sensor_data/p01_polar_hr.png" width="800"/>
+  <br>
+  <i>Example of heart rate signal collected from Polar H10</i>
+</p>
 
 Additional visualizations generated from this notebook are available in the [`figures/sensor_data/`](figures/sensor_data) directory.
 
