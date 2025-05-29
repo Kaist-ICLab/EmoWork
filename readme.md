@@ -70,7 +70,7 @@ pip install -r requirements.txt
 ## 📝 Notebook Overview
 
 ### `Dataset_Records.ipynb`
-Summarizes the dataset structure and provides a high-level overview of data sources and preprocessing steps. This notebook includes:
+This notebook summarizes the dataset structure and provides a high-level overview of data sources and preprocessing steps. This notebook includes:
 - Data collection protocol details
 - Data quality checks
 - Missing data analysis
@@ -87,7 +87,7 @@ Additional visualizations generated from this notebook are available in the [`fi
 <br>
 
 ### `Label_Analysis.ipynb`
-Analyzes the distribution of self-reported labels (e.g., perceived arousal, stress, suppression, valence), investigates missing values, and explores correlations and group differences (e.g., by gender or role).
+This notebook analyzes the distribution of self-reported labels (e.g., perceived arousal, stress, suppression, valence), investigates missing values, and explores correlations and group differences (e.g., by gender or role).
 
 <p align="center">
   <img src="figures/label_analysis/arousal_valence_distribution.png" width="800"/>
@@ -102,11 +102,12 @@ Additional visualizations generated from this notebook are available in the [`fi
 ### `ML_analysis.ipynb`
 This notebook builds machine learning models to predict perceived emotional states 
 (`arousal`, `stress`, `suppression`, `valence`) using five classifiers: 
-Decision Tree, Random Forest, SVM, XGBoost, and kNN.  
-Model performance is evaluated with standard metrics including Accuracy, F1 score, Precision, Recall, and ROC-AUC.
+**Decision Tree**, **Random Forest**, **SVM**, **XGBoost**, and **kNN**.
+
+Model performance is evaluated with standard metrics including **Accuracy**, **F1 score**, **Precision**, **Recall**, and **ROC-AUC**.
 
 <p align="center">
-  <img src="figures/model_results/auc_random_forest_by_pnum.png" width="600"/>
+  <img src="figures/model_results/auc_random_forest_by_pnum.png" width="500"/>
   <br>
   <i>Participant-wise AUC scores for session classification using a Random Forest model</i>
 </p>
