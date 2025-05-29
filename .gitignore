@@ -2,6 +2,9 @@
 K-EmoWorker.zip
 K-EmoWorker
 
+desktop.ini
+.DS_store
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
