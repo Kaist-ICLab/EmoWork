@@ -1,5 +1,3 @@
-> 📌 This repository contains supplementary code and technical validation materials for the manuscript
-> **"EmoWorker: A Multimodal Dataset for Assessing Emotion, Stress, and Emotional Workload in Interpersonal Work Scenario"** (*under review*)
 
 <br>
 <div align="center">
@@ -9,8 +7,10 @@
 </div>
 
 # EmoWorker: Technical Validation Code
+> 📌 This repository contains supplementary code and technical validation materials for the manuscript
+> **"EmoWorker: A Multimodal Dataset for Assessing **Emotion**, **Stress**, and **Emotional Workload** in Interpersonal Work Scenario"** (*under review*)
 
-This repository contains the code for technical validation of the EmoWorker dataset. The dataset itself is available at [Zenodo](https://zenodo.org/uploads/15181220).
+The dataset itself is available at [Zenodo - EmoWorker](https://zenodo.org/uploads/15181220).
 
 ## 📁 Repository Structure
 
@@ -24,17 +24,20 @@ TECHNICAL_VALIDATION/
 
 ## 🚀 Getting Started
 
-We recommend using **Python 3.10**. Some dependencies may not be fully compatible with Python 3.11 or above. All notebooks were developed and tested in a Jupyter Lab environment using Python 3.10.
+We recommend using **Python 3.10**. Some dependencies may not be fully compatible with Python 3.11. All notebooks were developed and tested using Python 3.10.
 
 1. Clone this repository
+```bash
+git clone https://github.com/Kaist-ICLab/EmoWorker.git
+```
 2. Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
-3. Run the notebooks:
-- TECHNICAL_VALIDATION/Dataset_Records.ipynb
-- TECHNICAL_VALIDATION/Label_Analysis.ipynb
-- TECHNICAL_VALIDATION/ML_analysis.ipynb
+3. Run the notebooks in **`TECHNICAL_VALIDATION`** folder:
+- `Dataset_Records.ipynb`
+- `Label_Analysis.ipynb`
+- `ML_analysis.ipynb`
 
 ## 📝 Notebook Overview
 
