@@ -1,7 +1,7 @@
 <br>
 
 <p align="center">
-  <img src="figures/emoworker_logo.png" width="400"/>
+  <img src="figures/emowork_logo.png" width="400"/>
 </p>
 
 <br>
@@ -10,11 +10,11 @@
   <b>A Multimodal Dataset for Assessing <i>Emotion</i>, <i>Stress</i>, <br>and <i>Emotional Workload</i> in Interpersonal Work Scenario</b>
 </p>
 
-# 💻 EmoWorker: Technical Validation Code
+# 💻 EmoWork: Technical Validation Code
 📌 This repository contains supplementary code and technical validation materials for the manuscript
-> **"EmoWorker: A Multimodal Dataset for Assessing Emotion, Stress, and Emotional Workload in Interpersonal Work Scenario"** (*under review*)
+> **"EmoWork: A Multimodal Dataset for Assessing Emotion, Stress, and Emotional Workload in Interpersonal Work Scenario"** (*under review*)
 
-The dataset itself is available at [Zenodo - EmoWorker](https://zenodo.org/uploads/15181220).
+The dataset itself is available at [Zenodo - EmoWork](https://zenodo.org/uploads/15181220).
 <br>
 
 ## 📁 Repository Structure
@@ -38,7 +38,6 @@ RESULTS/
 │           └── summary_5runs.csv
 
 figures/
-├── emoworker_logo.png
 ├── sensor_data/              # Visualizations from Dataset_Records.ipynb
 ├── label_analysis/           # Visualizations from Label_Analysis.ipynb
 └── model_results/            # Visualizations from ML_analysis.ipynb
@@ -54,7 +53,7 @@ We recommend using **Python 3.10**. Some dependencies may not be fully compatibl
 
 1. Clone this repository
 ```bash
-git clone https://github.com/Kaist-ICLab/EmoWorker.git
+git clone https://github.com/Kaist-ICLab/EmoWork.git
 ```
 2. Install dependencies:
 ```bash
