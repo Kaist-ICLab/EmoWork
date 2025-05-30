@@ -40,7 +40,7 @@ RESULTS/
 EmoWork/                      # Directory to store the dataset files downloaded from Zenodo
 ├── META/                     # Metadata files
 ├── LABELS/                   # Ground-truth labels (e.g., perceived stress, arousal) 
-├── SENSORS/                  # Multimodal sensor data
+└── SENSORS/                  # Multimodal sensor data
 
 figures/
 ├── sensor_data/              # Visualizations from Dataset_Records.ipynb
