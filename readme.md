@@ -37,6 +37,11 @@ RESULTS/
 │           ├── all_runs_results.csv
 │           └── summary_5runs.csv
 
+EmoWork/                      # Directory to store the dataset files downloaded from Zenodo
+├── META/                     # Metadata files
+├── LABELS/                   # Ground-truth labels (e.g., perceived stress, arousal) 
+├── SENSORS/                  # Multimodal sensor data
+
 figures/
 ├── sensor_data/              # Visualizations from Dataset_Records.ipynb
 ├── label_analysis/           # Visualizations from Label_Analysis.ipynb
